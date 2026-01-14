@@ -1,0 +1,102 @@
+/* Apply box-sizing to all elements */
+* {
+    box-sizing: border-box;
+}
+
+/* Base font */
+html {
+    font-family: "Lucida Sans", sans-serif;
+}
+
+/* Structural elements */
+header, nav, main, footer, article, aside, figure, figcaption, dl {
+    display: block;
+}
+
+/* Header styling */
+header {
+    background-color: #9933cc;
+    color: white;
+    padding: 15px;
+}
+
+/* Navigation */
+nav {
+    float: left;
+    width: 25%;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav li {
+    background-color: #33b5e5;
+    margin-bottom: 7px;
+    padding: 8px;
+}
+
+nav li:hover {
+    background-color: #0099cc;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Article */
+article {
+    float: left;
+    width: 75%;
+    padding: 15px;
+    line-height: 150%;
+}
+
+/* Aside */
+aside {
+    background-color: #33b5e5;
+    color: white;
+    padding: 15px;
+    width: 25%;
+    float: right;
+}
+
+/* Footer */
+footer {
+    clear: both;
+    text-align: center;
+    padding: 15px;
+    background-color: #0099cc;
+    color: white;
+    font-size: 12px;
+}
+
+/* Tables */
+table {
+    width: 45%;
+    margin: auto;
+    border-collapse: collapse;
+}
+
+td, th {
+    padding: 15px;
+}
+
+caption {
+    font-style: italic;
+    padding-top: 5px;
+}
+
+/* Images */
+figure {
+    float: left;
+    width: 25%;
+    padding: 15px;
+}
+
+figure img {
+    width: 100%;
+}
