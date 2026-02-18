@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        body {
+            font-family: sans-serif;
+            padding: 20px;
+        }
+
+        .array-container {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .element {
+            background: #e0f7fa;
+            padding: 10px 20px;
+            border: 2px solid #006064;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        button {
+            padding: 10px;
+            margin: 5px;
+            cursor: pointer;
+        }
+
+        .log {
+            background: #f0f0f0;
+            padding: 10px;
+            margin-top: 20px;
+            border-left: 5px solid #333;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Javascript Array Methods</h2>
+
+    <h3>Current 'players' Array:</h3>
+    <div id="visualArray" class="array-container"></div>
+    <div id="outputString"></div>
+
+    <hr>
+
+    <button onclick="demoPush()">Push (Add to End)</button>
+    <button onclick="demoPop()">Pop (Remove Last)</button>
+    <button onclick="demoUnshift()">Unshift (Add to Start)</button>
+    <button onclick="demoShift()">Shift (Remove First)</button>
+    <button onclick="demoSplice()">Splice (Insert at 5)</button>
+    <button onclick="demoSort()">Sort (A-Z)</button>
+    <button onclick="demoReverse()">Reverse</button>
+
+    <div class="log" id="actionLog">Action Log: Ready...</div>
+
+    <script>
+        // Initial setup matching Task 3 context
+        let players = ["Mario", "Luigi", "Peach", "Toad", "Tom", "Jerry"];
+
+        function updateDisplay(action) {
+            const container = document.getElementById('visualArray');
+            container.innerHTML = ''; // Clear current
+
+            // Create visual blocks for each element
+            players.forEach((player, index) => {
+                let div = document.createElement('div');
+                div.className = 'element';
+                div.innerText = `${index}: ${player}`;
+                container.appendChild(div);
+            });
+
+            document.getElementById('outputString').innerText = `Code view: ["${players.join('", "')}"]`;
+            document.getElementById('actionLog').innerText = `Action: ${action}`;
+
+            // Highlighting the length property
+            document.getElementById('actionLog').innerText += ` | Array Length: ${players.length}`;
+        }
+
+
+        function demoPush() {
+            // Context: "Use the push() method to add your name"
+            players.push("Atindra");
+            updateDisplay("push('Atindra')");
+        }
+
+        function demoPop() {
+            // Context: "Use the pop() method to remove an element"
+            let removed = players.pop();
+            updateDisplay(`pop() -> Removed ${removed}`);
+        }
+
+        function demoUnshift() {
+            // Context: "Use the unshift() method to add 'Sky'"
+            players.unshift("Water");
+            updateDisplay("unshift('Water')");
+        }
+
+        function demoShift() {
+            // Context: "Use the shift() method to remove an element"
+            let removed = players.shift();
+            updateDisplay(`shift() -> Removed ${removed}`);
+        }
+
+        function demoSplice() {
+            // Context: "Use the splice() method to add 'Shelby' and 'Shawn'... in 5th & 6th positions"
+            // Note: Index 4 is the 5th position.
+            players.splice(4, 0, "Shelby", "Shawn");
+            updateDisplay("splice(4, 0, 'Shelby', 'Shawn')");
+        }
+
+        function demoSort() {
+            // Context: "Use the sort() method"
+            players.sort();
+            updateDisplay("sort()");
+        }
+
+        function demoReverse() {
+            // Context: "Use the reverse() method"
+            players.reverse();
+            updateDisplay("reverse()");
+        }
+
+        // Initial render
+        updateDisplay("Page Loaded");
+
+    </script>
+</body>
+
+</html>
